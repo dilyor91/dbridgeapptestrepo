@@ -1,0 +1,84 @@
+
+    /**
+     * Board entity
+    */
+
+    entity TbBoard {
+       bdType String,
+       title String,
+       content String,
+       publishedDate Instant,
+       status String,
+       boardOrder Integer,
+       regUser String,
+       regDate Instant,
+       modUser String,
+       modDate Instant
+    }
+    
+    /**
+    * TbBoardViewCnt entity
+    */
+    entity TbBoardViewCnt {
+        viewCnt Long
+    }
+    
+    /**
+    * Guide entity
+    */
+    entity TbGuide {
+        title String,
+        content String,
+        status String,
+        link String,
+        regUser String,
+        regDate Instant,
+        modUser String,
+        modDate Instant
+    }
+    /**
+    * Attachment entity
+    */
+    entity TbAttachment {
+        attType String,
+        name String,
+        path String,
+        fileSize Long,
+        ext String,
+        regUser String,
+        regDate Instant,
+        modUser String,
+        modDate Instant
+    }
+    
+    /** 
+    * TB_EDU_MST
+    */
+    entity TbEduMst {
+       viewCnt Long
+    }
+    
+    relationship OneToOne {
+      TbGuide {eduSeq} to TbEduMst
+    }
+    
+    relationship OneToOne {
+	    TbBoardViewCnt{bdSeq} to TbBoard
+    }
+    
+    /**********************************/
+    
+    relationship ManyToOne {
+        TbAttachment{bdSeq} to TbBoard,
+        TbAttachment{gdSeq} to TbGuide
+    }
+    
+    
+    // Set pagination options
+    paginate TbBoard, TbGuide  with pagination
+
+    // Use Data Transfer Objects (DTO)
+    dto * with mapstruct
+
+    // Set service options to all except few
+    service all with serviceImpl
