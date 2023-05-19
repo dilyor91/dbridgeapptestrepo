@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity TbGuide.
+    -->
+    <changeSet id="20230519062109-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="edu_seq_id"
+                                 baseTableName="tb_guide"
+                                 constraintName="fk_tb_guide__edu_seq_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tb_edu_mst"/>
+    </changeSet>
+</databaseChangeLog>

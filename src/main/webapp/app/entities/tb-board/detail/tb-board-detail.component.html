@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="tbBoard">
+      <h2 data-cy="tbBoardDetailsHeading"><span jhiTranslate="dbridgeapptestApp.tbBoard.detail.title">Tb Board</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ tbBoard.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.bdType">Bd Type</span></dt>
+        <dd>
+          <span>{{ tbBoard.bdType }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.title">Title</span></dt>
+        <dd>
+          <span>{{ tbBoard.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.content">Content</span></dt>
+        <dd>
+          <span>{{ tbBoard.content }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.publishedDate">Published Date</span></dt>
+        <dd>
+          <span>{{ tbBoard.publishedDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.status">Status</span></dt>
+        <dd>
+          <span>{{ tbBoard.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.boardOrder">Board Order</span></dt>
+        <dd>
+          <span>{{ tbBoard.boardOrder }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.regUser">Reg User</span></dt>
+        <dd>
+          <span>{{ tbBoard.regUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.regDate">Reg Date</span></dt>
+        <dd>
+          <span>{{ tbBoard.regDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.modUser">Mod User</span></dt>
+        <dd>
+          <span>{{ tbBoard.modUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoard.modDate">Mod Date</span></dt>
+        <dd>
+          <span>{{ tbBoard.modDate | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/tb-board', tbBoard.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

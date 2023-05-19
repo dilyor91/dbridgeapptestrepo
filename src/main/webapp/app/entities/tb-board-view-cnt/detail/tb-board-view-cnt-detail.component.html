@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="tbBoardViewCnt">
+      <h2 data-cy="tbBoardViewCntDetailsHeading">
+        <span jhiTranslate="dbridgeapptestApp.tbBoardViewCnt.detail.title">Tb Board View Cnt</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ tbBoardViewCnt.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoardViewCnt.viewCnt">View Cnt</span></dt>
+        <dd>
+          <span>{{ tbBoardViewCnt.viewCnt }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbBoardViewCnt.bdSeq">Bd Seq</span></dt>
+        <dd>
+          <div *ngIf="tbBoardViewCnt.bdSeq">
+            <a [routerLink]="['/tb-board', tbBoardViewCnt.bdSeq.id, 'view']">{{ tbBoardViewCnt.bdSeq.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/tb-board-view-cnt', tbBoardViewCnt.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

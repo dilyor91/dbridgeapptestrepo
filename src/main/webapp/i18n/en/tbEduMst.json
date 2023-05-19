@@ -1,0 +1,24 @@
+{
+  "dbridgeapptestApp": {
+    "tbEduMst": {
+      "home": {
+        "title": "Tb Edu Msts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tb Edu Mst",
+        "createOrEditLabel": "Create or edit a Tb Edu Mst",
+        "notFound": "No Tb Edu Msts found"
+      },
+      "created": "A new Tb Edu Mst is created with identifier {{ param }}",
+      "updated": "A Tb Edu Mst is updated with identifier {{ param }}",
+      "deleted": "A Tb Edu Mst is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tb Edu Mst {{ id }}?"
+      },
+      "detail": {
+        "title": "Tb Edu Mst"
+      },
+      "id": "ID",
+      "viewCnt": "View Cnt"
+    }
+  }
+}

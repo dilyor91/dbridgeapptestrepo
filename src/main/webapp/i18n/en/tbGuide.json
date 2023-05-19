@@ -1,0 +1,32 @@
+{
+  "dbridgeapptestApp": {
+    "tbGuide": {
+      "home": {
+        "title": "Tb Guides",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tb Guide",
+        "createOrEditLabel": "Create or edit a Tb Guide",
+        "notFound": "No Tb Guides found"
+      },
+      "created": "A new Tb Guide is created with identifier {{ param }}",
+      "updated": "A Tb Guide is updated with identifier {{ param }}",
+      "deleted": "A Tb Guide is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tb Guide {{ id }}?"
+      },
+      "detail": {
+        "title": "Tb Guide"
+      },
+      "id": "ID",
+      "title": "Title",
+      "content": "Content",
+      "status": "Status",
+      "link": "Link",
+      "regUser": "Reg User",
+      "regDate": "Reg Date",
+      "modUser": "Mod User",
+      "modDate": "Mod Date",
+      "eduSeq": "Edu Seq"
+    }
+  }
+}

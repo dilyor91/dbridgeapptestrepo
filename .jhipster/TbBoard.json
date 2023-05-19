@@ -1,0 +1,57 @@
+{
+  "applications": "*",
+  "changelogDate": "20230519062107",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tb_board",
+  "fields": [
+    {
+      "fieldName": "bdType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "publishedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "boardOrder",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "regUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "modUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "modDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Board entity",
+  "jpaMetamodelFiltering": false,
+  "name": "TbBoard",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

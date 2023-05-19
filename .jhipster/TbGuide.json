@@ -1,0 +1,56 @@
+{
+  "applications": "*",
+  "changelogDate": "20230519062109",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tb_guide",
+  "fields": [
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "link",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "modUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "modDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Guide entity",
+  "jpaMetamodelFiltering": false,
+  "name": "TbGuide",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "tbEduMst",
+      "ownerSide": true,
+      "relationshipName": "eduSeq",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
