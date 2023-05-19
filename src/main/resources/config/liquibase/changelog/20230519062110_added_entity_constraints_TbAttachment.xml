@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!--
+        Added the constraints for entity TbAttachment.
+    -->
+    <changeSet id="20230519062110-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="bd_seq_id"
+                                 baseTableName="tb_attachment"
+                                 constraintName="fk_tb_attachment__bd_seq_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tb_board"/>
+
+        <addForeignKeyConstraint baseColumnNames="gd_seq_id"
+                                 baseTableName="tb_attachment"
+                                 constraintName="fk_tb_attachment__gd_seq_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tb_guide"/>
+    </changeSet>
+</databaseChangeLog>

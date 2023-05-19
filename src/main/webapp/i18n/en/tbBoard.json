@@ -1,0 +1,33 @@
+{
+  "dbridgeapptestApp": {
+    "tbBoard": {
+      "home": {
+        "title": "Tb Boards",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tb Board",
+        "createOrEditLabel": "Create or edit a Tb Board",
+        "notFound": "No Tb Boards found"
+      },
+      "created": "A new Tb Board is created with identifier {{ param }}",
+      "updated": "A Tb Board is updated with identifier {{ param }}",
+      "deleted": "A Tb Board is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tb Board {{ id }}?"
+      },
+      "detail": {
+        "title": "Tb Board"
+      },
+      "id": "ID",
+      "bdType": "Bd Type",
+      "title": "Title",
+      "content": "Content",
+      "publishedDate": "Published Date",
+      "status": "Status",
+      "boardOrder": "Board Order",
+      "regUser": "Reg User",
+      "regDate": "Reg Date",
+      "modUser": "Mod User",
+      "modDate": "Mod Date"
+    }
+  }
+}

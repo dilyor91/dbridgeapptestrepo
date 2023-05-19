@@ -48,6 +48,11 @@ public class CacheConfiguration {
             createCache(cm, com.kdatalab.bridge.domain.User.class.getName());
             createCache(cm, com.kdatalab.bridge.domain.Authority.class.getName());
             createCache(cm, com.kdatalab.bridge.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.kdatalab.bridge.domain.TbBoard.class.getName());
+            createCache(cm, com.kdatalab.bridge.domain.TbBoardViewCnt.class.getName());
+            createCache(cm, com.kdatalab.bridge.domain.TbGuide.class.getName());
+            createCache(cm, com.kdatalab.bridge.domain.TbAttachment.class.getName());
+            createCache(cm, com.kdatalab.bridge.domain.TbEduMst.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

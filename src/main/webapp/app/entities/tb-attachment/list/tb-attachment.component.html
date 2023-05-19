@@ -1,0 +1,166 @@
+<div>
+  <h2 id="page-heading" data-cy="TbAttachmentHeading">
+    <span jhiTranslate="dbridgeapptestApp.tbAttachment.home.title">Tb Attachments</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="dbridgeapptestApp.tbAttachment.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-tb-attachment"
+        [routerLink]="['/tb-attachment/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="dbridgeapptestApp.tbAttachment.home.createLabel"> Create a new Tb Attachment </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="tbAttachments?.length === 0">
+    <span jhiTranslate="dbridgeapptestApp.tbAttachment.home.notFound">No Tb Attachments found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="tbAttachments && tbAttachments.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="attType">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.attType">Att Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.name">Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="path">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.path">Path</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fileSize">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.fileSize">File Size</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="ext">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.ext">Ext</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="regUser">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.regUser">Reg User</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="regDate">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.regDate">Reg Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="modUser">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.modUser">Mod User</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="modDate">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.modDate">Mod Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="bdSeq.id">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.bdSeq">Bd Seq</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="gdSeq.id">
+            <div class="d-flex">
+              <span jhiTranslate="dbridgeapptestApp.tbAttachment.gdSeq">Gd Seq</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tbAttachment of tbAttachments; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/tb-attachment', tbAttachment.id, 'view']">{{ tbAttachment.id }}</a>
+          </td>
+          <td>{{ tbAttachment.attType }}</td>
+          <td>{{ tbAttachment.name }}</td>
+          <td>{{ tbAttachment.path }}</td>
+          <td>{{ tbAttachment.fileSize }}</td>
+          <td>{{ tbAttachment.ext }}</td>
+          <td>{{ tbAttachment.regUser }}</td>
+          <td>{{ tbAttachment.regDate | formatMediumDatetime }}</td>
+          <td>{{ tbAttachment.modUser }}</td>
+          <td>{{ tbAttachment.modDate | formatMediumDatetime }}</td>
+          <td>
+            <div *ngIf="tbAttachment.bdSeq">
+              <a [routerLink]="['/tb-board', tbAttachment.bdSeq.id, 'view']">{{ tbAttachment.bdSeq.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="tbAttachment.gdSeq">
+              <a [routerLink]="['/tb-guide', tbAttachment.gdSeq.id, 'view']">{{ tbAttachment.gdSeq.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/tb-attachment', tbAttachment.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/tb-attachment', tbAttachment.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(tbAttachment)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

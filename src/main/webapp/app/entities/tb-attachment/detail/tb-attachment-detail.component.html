@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="tbAttachment">
+      <h2 data-cy="tbAttachmentDetailsHeading"><span jhiTranslate="dbridgeapptestApp.tbAttachment.detail.title">Tb Attachment</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ tbAttachment.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.attType">Att Type</span></dt>
+        <dd>
+          <span>{{ tbAttachment.attType }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.name">Name</span></dt>
+        <dd>
+          <span>{{ tbAttachment.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.path">Path</span></dt>
+        <dd>
+          <span>{{ tbAttachment.path }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.fileSize">File Size</span></dt>
+        <dd>
+          <span>{{ tbAttachment.fileSize }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.ext">Ext</span></dt>
+        <dd>
+          <span>{{ tbAttachment.ext }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.regUser">Reg User</span></dt>
+        <dd>
+          <span>{{ tbAttachment.regUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.regDate">Reg Date</span></dt>
+        <dd>
+          <span>{{ tbAttachment.regDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.modUser">Mod User</span></dt>
+        <dd>
+          <span>{{ tbAttachment.modUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.modDate">Mod Date</span></dt>
+        <dd>
+          <span>{{ tbAttachment.modDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.bdSeq">Bd Seq</span></dt>
+        <dd>
+          <div *ngIf="tbAttachment.bdSeq">
+            <a [routerLink]="['/tb-board', tbAttachment.bdSeq.id, 'view']">{{ tbAttachment.bdSeq.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbAttachment.gdSeq">Gd Seq</span></dt>
+        <dd>
+          <div *ngIf="tbAttachment.gdSeq">
+            <a [routerLink]="['/tb-guide', tbAttachment.gdSeq.id, 'view']">{{ tbAttachment.gdSeq.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/tb-attachment', tbAttachment.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

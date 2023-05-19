@@ -1,0 +1,119 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-tb-attachment-heading"
+        data-cy="TbAttachmentCreateUpdateHeading"
+        jhiTranslate="dbridgeapptestApp.tbAttachment.home.createOrEditLabel"
+      >
+        Create or edit a Tb Attachment
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.attType" for="field_attType">Att Type</label>
+          <input type="text" class="form-control" name="attType" id="field_attType" data-cy="attType" formControlName="attType" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.name" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.path" for="field_path">Path</label>
+          <input type="text" class="form-control" name="path" id="field_path" data-cy="path" formControlName="path" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.fileSize" for="field_fileSize">File Size</label>
+          <input type="number" class="form-control" name="fileSize" id="field_fileSize" data-cy="fileSize" formControlName="fileSize" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.ext" for="field_ext">Ext</label>
+          <input type="text" class="form-control" name="ext" id="field_ext" data-cy="ext" formControlName="ext" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.regUser" for="field_regUser">Reg User</label>
+          <input type="text" class="form-control" name="regUser" id="field_regUser" data-cy="regUser" formControlName="regUser" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.regDate" for="field_regDate">Reg Date</label>
+          <div class="d-flex">
+            <input
+              id="field_regDate"
+              data-cy="regDate"
+              type="datetime-local"
+              class="form-control"
+              name="regDate"
+              formControlName="regDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.modUser" for="field_modUser">Mod User</label>
+          <input type="text" class="form-control" name="modUser" id="field_modUser" data-cy="modUser" formControlName="modUser" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.modDate" for="field_modDate">Mod Date</label>
+          <div class="d-flex">
+            <input
+              id="field_modDate"
+              data-cy="modDate"
+              type="datetime-local"
+              class="form-control"
+              name="modDate"
+              formControlName="modDate"
+              placeholder="YYYY-MM-DD HH:mm"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.bdSeq" for="field_bdSeq">Bd Seq</label>
+          <select class="form-control" id="field_bdSeq" data-cy="bdSeq" name="bdSeq" formControlName="bdSeq" [compareWith]="compareTbBoard">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="tbBoardOption" *ngFor="let tbBoardOption of tbBoardsSharedCollection">{{ tbBoardOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="dbridgeapptestApp.tbAttachment.gdSeq" for="field_gdSeq">Gd Seq</label>
+          <select class="form-control" id="field_gdSeq" data-cy="gdSeq" name="gdSeq" formControlName="gdSeq" [compareWith]="compareTbGuide">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="tbGuideOption" *ngFor="let tbGuideOption of tbGuidesSharedCollection">{{ tbGuideOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

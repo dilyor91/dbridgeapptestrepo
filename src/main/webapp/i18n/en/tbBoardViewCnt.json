@@ -1,0 +1,25 @@
+{
+  "dbridgeapptestApp": {
+    "tbBoardViewCnt": {
+      "home": {
+        "title": "Tb Board View Cnts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tb Board View Cnt",
+        "createOrEditLabel": "Create or edit a Tb Board View Cnt",
+        "notFound": "No Tb Board View Cnts found"
+      },
+      "created": "A new Tb Board View Cnt is created with identifier {{ param }}",
+      "updated": "A Tb Board View Cnt is updated with identifier {{ param }}",
+      "deleted": "A Tb Board View Cnt is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tb Board View Cnt {{ id }}?"
+      },
+      "detail": {
+        "title": "Tb Board View Cnt"
+      },
+      "id": "ID",
+      "viewCnt": "View Cnt",
+      "bdSeq": "Bd Seq"
+    }
+  }
+}

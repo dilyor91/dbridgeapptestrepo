@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="tbGuide">
+      <h2 data-cy="tbGuideDetailsHeading"><span jhiTranslate="dbridgeapptestApp.tbGuide.detail.title">Tb Guide</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ tbGuide.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.title">Title</span></dt>
+        <dd>
+          <span>{{ tbGuide.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.content">Content</span></dt>
+        <dd>
+          <span>{{ tbGuide.content }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.status">Status</span></dt>
+        <dd>
+          <span>{{ tbGuide.status }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.link">Link</span></dt>
+        <dd>
+          <span>{{ tbGuide.link }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.regUser">Reg User</span></dt>
+        <dd>
+          <span>{{ tbGuide.regUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.regDate">Reg Date</span></dt>
+        <dd>
+          <span>{{ tbGuide.regDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.modUser">Mod User</span></dt>
+        <dd>
+          <span>{{ tbGuide.modUser }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.modDate">Mod Date</span></dt>
+        <dd>
+          <span>{{ tbGuide.modDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="dbridgeapptestApp.tbGuide.eduSeq">Edu Seq</span></dt>
+        <dd>
+          <div *ngIf="tbGuide.eduSeq">
+            <a [routerLink]="['/tb-edu-mst', tbGuide.eduSeq.id, 'view']">{{ tbGuide.eduSeq.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/tb-guide', tbGuide.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

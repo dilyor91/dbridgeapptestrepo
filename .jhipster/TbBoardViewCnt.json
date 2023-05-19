@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20230519062108",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tb_board_view_cnt",
+  "fields": [
+    {
+      "fieldName": "viewCnt",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "TbBoardViewCnt entity",
+  "jpaMetamodelFiltering": false,
+  "name": "TbBoardViewCnt",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "tbBoard",
+      "ownerSide": true,
+      "relationshipName": "bdSeq",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

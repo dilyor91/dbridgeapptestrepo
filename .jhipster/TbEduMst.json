@@ -1,0 +1,21 @@
+{
+  "applications": "*",
+  "changelogDate": "20230519062111",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tb_edu_mst",
+  "fields": [
+    {
+      "fieldName": "viewCnt",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "TB_EDU_MST",
+  "jpaMetamodelFiltering": false,
+  "name": "TbEduMst",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

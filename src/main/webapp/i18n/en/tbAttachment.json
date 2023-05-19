@@ -1,0 +1,34 @@
+{
+  "dbridgeapptestApp": {
+    "tbAttachment": {
+      "home": {
+        "title": "Tb Attachments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Tb Attachment",
+        "createOrEditLabel": "Create or edit a Tb Attachment",
+        "notFound": "No Tb Attachments found"
+      },
+      "created": "A new Tb Attachment is created with identifier {{ param }}",
+      "updated": "A Tb Attachment is updated with identifier {{ param }}",
+      "deleted": "A Tb Attachment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tb Attachment {{ id }}?"
+      },
+      "detail": {
+        "title": "Tb Attachment"
+      },
+      "id": "ID",
+      "attType": "Att Type",
+      "name": "Name",
+      "path": "Path",
+      "fileSize": "File Size",
+      "ext": "Ext",
+      "regUser": "Reg User",
+      "regDate": "Reg Date",
+      "modUser": "Mod User",
+      "modDate": "Mod Date",
+      "bdSeq": "Bd Seq",
+      "gdSeq": "Gd Seq"
+    }
+  }
+}

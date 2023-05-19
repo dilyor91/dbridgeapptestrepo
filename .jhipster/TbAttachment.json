@@ -1,0 +1,64 @@
+{
+  "applications": "*",
+  "changelogDate": "20230519062110",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "tb_attachment",
+  "fields": [
+    {
+      "fieldName": "attType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "path",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fileSize",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ext",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "regDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "modUser",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "modDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Attachment entity",
+  "jpaMetamodelFiltering": false,
+  "name": "TbAttachment",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "tbBoard",
+      "relationshipName": "bdSeq",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "tbGuide",
+      "relationshipName": "gdSeq",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
